@@ -14,6 +14,7 @@
 					{
 						nixpkgs.config = import ./config/config.nix;
 						imports = [
+							./modules/general.nix
 							./modules/git.nix
 							./modules/home-manager.nix
 							./modules/chat.nix
