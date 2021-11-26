@@ -1,6 +1,6 @@
 all: userswitch switchos
 
-switchos:
+osswitch:
 	# defaults to the current hostname
 	sudo nixos-rebuild switch --flake .
 
