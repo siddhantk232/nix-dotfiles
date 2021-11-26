@@ -51,13 +51,23 @@ in
   # Enable the GNOME Desktop Environment.
   services.xserver = {
 		enable = true;
+		desktopManager.xterm.enable = false;
 		exportConfiguration = true;
+
 		videoDrivers = [ "nvidia" ];
-		displayManager.gdm = {
-			enable = true;
-			wayland = false;
+
+		displayManager = {
+			defaultSession = "none+i3";
 		};
-		desktopManager.gnome.enable = true;
+
+		windowManager.i3 = {
+			enable = true;
+			package = pkgs.i3-gaps;
+			extraPackages = with pkgs; [
+				dmenu
+				i3status-rust
+			];
+		};
 	};
 
 	hardware.nvidia.prime = {
@@ -130,6 +140,8 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+
+	programs.dconf.enable = true;
 
   # List services that you want to enable:
 

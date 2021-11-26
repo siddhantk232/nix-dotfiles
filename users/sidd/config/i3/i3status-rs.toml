@@ -1,0 +1,50 @@
+theme = "gruvbox-dark"
+icons = "awesome"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = "{icon} {used}"
+
+[[block]]
+block = "memory"
+format_mem = "{mem_total_used}"
+display_type = "memory"
+icons = true
+clickable = false
+interval = 5
+warning_mem = 80
+critical_mem = 95
+
+[[block]]
+block = "cpu"
+critical = 95
+format = "{utilization} {frequency}"
+info = 30
+interval = 1
+warning = 60
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "bluetooth"
+mac = "98:09:CF:CE:36:08"
+format = ""
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
+
+[[block]]
+block = "battery"
+format = "{percentage}% {time}"
+interval = 10
+

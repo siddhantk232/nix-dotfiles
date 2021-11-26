@@ -1,4 +1,4 @@
-all: update userswitch update-sys switchos
+all: userswitch switchos
 
 switchos:
 	# defaults to the current hostname
