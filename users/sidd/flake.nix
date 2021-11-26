@@ -18,6 +18,7 @@
 							./modules/git.nix
 							./modules/home-manager.nix
 							./modules/chat.nix
+							./modules/i3.nix
 						];
 					};
 
