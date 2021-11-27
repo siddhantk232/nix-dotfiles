@@ -16,13 +16,12 @@
 						imports = [
 							./modules/home-manager.nix
 							./modules/chat.nix
-							./modules/fish.nix
+              ./modules/dev.nix
 							./modules/fonts.nix
 							./modules/general.nix
 							./modules/git.nix
 							./modules/i3.nix
 							./modules/media.nix
-							./modules/nvim.nix
 						];
 					};
 

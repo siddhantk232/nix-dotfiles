@@ -11,6 +11,7 @@
 		pavucontrol
 		playerctl
     lsd
+    bc
 	];
 	
 	home.sessionVariables = {
