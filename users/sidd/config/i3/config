@@ -5,7 +5,7 @@ set $outer_gaps 0
 set $term st
 set $BROWSER brave
 
-font pango: Ubuntu Mono 10
+font pango: Fira Code 10
 
 # border width
 for_window [class="^.*"] border pixel 2
@@ -196,7 +196,7 @@ bindsym $mod+n [instance="dropdown"] scratchpad show; [instance="dropdown"] move
 bindsym $mod+a [instance="math"]     scratchpad show; [instance="math"]     move position center
 
 bar {
-    font pango: Ubuntu Mono 11
+    font pango: Fira Code 10
 
     position bottom
     status_command i3status-rs

@@ -1,5 +1,5 @@
 theme = "gruvbox-dark"
-icons = "awesome"
+icons = "material-nf"
 
 [[block]]
 block = "disk_space"

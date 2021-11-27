@@ -20,6 +20,8 @@
 							./modules/chat.nix
 							./modules/i3.nix
 							./modules/fonts.nix
+              ./modules/nvim.nix
+              ./modules/media.nix
 						];
 					};
 

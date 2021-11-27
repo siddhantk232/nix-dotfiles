@@ -8,5 +8,7 @@
 		gnome.gnome-screenshot
 		scrot
 		networkmanagerapplet
+		pavucontrol
+		playerctl
 	];
 }
