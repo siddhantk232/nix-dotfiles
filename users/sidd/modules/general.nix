@@ -2,8 +2,6 @@
 {
 	home.packages = with pkgs; [
 		brave
-		steam
-
 		bat
 		zathura
 		fzf

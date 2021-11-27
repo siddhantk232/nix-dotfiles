@@ -2,4 +2,10 @@
 {
 	home.stateVersion = "20.09";
 	programs.home-manager.enable = true;
+	home.packages = with pkgs; [
+		lxappearance
+		xclip
+		gnome.gnome-screenshot
+		scrot
+	];
 }

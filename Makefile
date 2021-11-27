@@ -1,4 +1,4 @@
-all: userswitch switchos
+all: userswitch osswitch
 
 osswitch:
 	# defaults to the current hostname
