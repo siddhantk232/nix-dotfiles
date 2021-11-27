@@ -14,14 +14,15 @@
 					{
 						nixpkgs.config = import ./config/config.nix;
 						imports = [
-							./modules/general.nix
-							./modules/git.nix
 							./modules/home-manager.nix
 							./modules/chat.nix
-							./modules/i3.nix
+							./modules/fish.nix
 							./modules/fonts.nix
-              ./modules/nvim.nix
-              ./modules/media.nix
+							./modules/general.nix
+							./modules/git.nix
+							./modules/i3.nix
+							./modules/media.nix
+							./modules/nvim.nix
 						];
 					};
 

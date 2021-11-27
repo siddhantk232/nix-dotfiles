@@ -10,5 +10,10 @@
 		networkmanagerapplet
 		pavucontrol
 		playerctl
+    lsd
 	];
+	
+	home.sessionVariables = {
+		EDITOR = "nvim";
+	};
 }
