@@ -7,5 +7,6 @@
 		xclip
 		gnome.gnome-screenshot
 		scrot
+		networkmanagerapplet
 	];
 }
