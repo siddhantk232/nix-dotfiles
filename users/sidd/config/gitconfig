@@ -1,0 +1,34 @@
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+
+[user]
+	email = siddhantk232@gmail.com
+	name  = siddhantCodes
+
+[init]
+  defaultBranch = main
+
+[alias]
+  lg  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  st  = status
+  c   = commit
+  p   = push
+  up  = pull --rebase=merges
+  a   = add --all
+
+[pager]
+    diff   = delta
+    log    = delta
+    reflog = delta
+    show   = delta
+
+[delta]
+    line-numbers = true
+    syntax-theme = gruvbox-dark
+    side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[pull]
+	rebase = false
