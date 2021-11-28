@@ -11,6 +11,7 @@
     pavucontrol
     pulseaudio
     playerctl
+    brightnessctl
     lsd
     bc
     ripgrep
