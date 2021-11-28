@@ -15,6 +15,7 @@
     lsd
     bc
     ripgrep
+    nitrogen
   ];
   
   home.sessionVariables = {
