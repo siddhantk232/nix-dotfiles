@@ -7,10 +7,14 @@ set -x BROWSER brave
 set -x TERM st
 set -x LC_ALL en_US.UTF-8
 set -x BAT_THEME gruvbox-dark
-set -x PATH $PATH ~/.dotfiles/users/sidd/config/scripts
+set -x PATH $PATH ~/projects/.dotfiles/users/sidd/config/scripts
 
 # config aliases (all lowercase and starts with c)
-alias config "nvim ~/.dotfiles"
+alias config "nvim ~/projects/.dotfiles"
+# Shortcut to setup a nix-shell with fish. This lets you do something like
+# `fnix -p go` to get an environment with Go but use the fish shell along
+# with it.
+alias fnix "nix-shell --run fish"
 
 # aliases for commands
 alias r            "./bin/rails"

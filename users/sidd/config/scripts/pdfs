@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 file=`find ~/materials -type f -name '*.pdf' | fzf`
 

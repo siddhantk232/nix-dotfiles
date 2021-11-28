@@ -2,16 +2,15 @@
 {
   home.packages = with pkgs; [
     go
-    gcc
     nodejs-16_x
     haskellPackages.ghc
     dart
     flutter
+    gcc
 
     # Language servers
     nodePackages.typescript-language-server
     gopls
-    clang-tools
     haskell-language-server
     solargraph
     nodePackages.pyright
