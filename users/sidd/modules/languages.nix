@@ -4,14 +4,14 @@
     go
     gcc
     nodejs-16_x
-    haskellPakcages.ghc
+    haskellPackages.ghc
     dart
     flutter
 
     # Language servers
     nodePackages.typescript-language-server
     gopls
-    clangd
+    clang-tools
     haskell-language-server
     solargraph
     nodePackages.pyright

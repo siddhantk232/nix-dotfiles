@@ -62,4 +62,7 @@
 
   # Fish config
   xdg.configFile."fish/config.fish".text = builtins.readFile ../config/fish/config.fish;
+
+  # Tmux 
+  home.file.".tmux.conf".text = builtins.readFile ../config/tmux.conf;
 }
