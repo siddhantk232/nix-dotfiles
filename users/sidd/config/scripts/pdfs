@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+file=`find ~/materials -type f -name '*.pdf' | fzf`
+
+# open zathura in background and exit
+if [ ! -z "$file" ]; then
+  zathura "$file" & disown && exit
+fi
