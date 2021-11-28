@@ -7,19 +7,7 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  inputs.telescope-fzf-native = {
-    url = "github:nvim-telescope/telescope-fzf-native.nvim";
-    flake = false;
-  };
-
-  outputs = { self, nixpkgs, home-manager }: 
-  let 
-    overlays = [
-      (self: super: {
-        telescope-fzf-native = super.callPackage ./packages/telescope-fzf-native.nix {src = super.inputs.telescope-fzf-native;};
-      })
-    ];
-  in
+  outputs = { self, nixpkgs, home-manager, ... }: 
   {
     homeConfigurations = {
       "sidd@legion" = home-manager.lib.homeManagerConfiguration {
@@ -34,6 +22,7 @@
               ./modules/general.nix
               ./modules/git.nix
               ./modules/i3.nix
+              ./modules/languages.nix
               ./modules/media.nix
             ];
           };

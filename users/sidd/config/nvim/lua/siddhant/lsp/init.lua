@@ -17,15 +17,14 @@ local servers = {
   hls = {cmd = {"haskell-language-server-8.10.5", "--lsp"}},
   dartls = {},
   solargraph = {},
-  pylsp = {},
+  pyright = {},
   terraformls = {},
   bashls = {},
   jsonls = require("siddhant.lsp.json").config,
   svelte = require("siddhant.lsp.svelte").config,
   cssls = {cmd = {"vscode-css-language-server", "--stdio"}},
   html = {cmd = {"vscode-html-language-server", "--stdio"}},
-  texlab = {},
-  gdscript = {}
+  texlab = {}
 }
 
 for name, opts in pairs(servers) do

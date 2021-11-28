@@ -39,24 +39,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "telescope-fzf-native": "telescope-fzf-native"
-      }
-    },
-    "telescope-fzf-native": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1637772424,
-        "narHash": "sha256-gd/nNgMhvHdJWOlHMdYxY8Hi8Qo4F66TjKSewNKNR3I=",
-        "owner": "nvim-telescope",
-        "repo": "telescope-fzf-native.nvim",
-        "rev": "b8662b076175e75e6497c59f3e2799b879d7b954",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-telescope",
-        "repo": "telescope-fzf-native.nvim",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
