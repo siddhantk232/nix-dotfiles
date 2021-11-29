@@ -4,8 +4,6 @@
     go
     nodejs-16_x
     haskellPackages.ghc
-    dart
-    flutter
     gcc
 
     # Language servers
