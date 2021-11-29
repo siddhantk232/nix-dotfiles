@@ -16,6 +16,7 @@
     bc
     ripgrep
     nitrogen
+    pass-otp
   ];
   
   home.sessionVariables = {
