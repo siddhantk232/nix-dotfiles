@@ -15,6 +15,7 @@
           {
             nixpkgs.config = import ./config/config.nix;
             imports = [
+              ./modules/android.nix
               ./modules/home-manager.nix
               ./modules/chat.nix
               ./modules/dev.nix

@@ -110,7 +110,7 @@ in
     isNormalUser = true;
 		createHome = true;
 		uid = 1000;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "adbusers" ];
 		shell = pkgs.fish;
   };
 
@@ -153,6 +153,9 @@ in
 
 	# Steam
 	programs.steam.enable = true;
+
+  # Android enable
+  programs.adb.enable = true;
 
   # List services that you want to enable:
 
