@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# get youtube video url from youtube music or the youtube url
+
+id=`echo "$1" | awk -F "=" '{print $2}' | awk -F "&" '{print $1}'`
+
+# print and copy to clipboard
+echo "https://www.youtube.com/watch?v=$id" \
+  | tee >(xclip -selection clipboard)
