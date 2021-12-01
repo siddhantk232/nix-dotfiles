@@ -20,14 +20,14 @@ in
     ];
 
 
-	nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "legion"; # Define your hostname.
-	networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
@@ -50,31 +50,31 @@ in
   # Enable the X11 windowing system.
   # Enable the GNOME Desktop Environment.
   services.xserver = {
-		enable = true;
-		desktopManager.xterm.enable = false;
-		exportConfiguration = true;
+    enable = true;
+    desktopManager.xterm.enable = false;
+    exportConfiguration = true;
 
-		videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" ];
 
-		displayManager = {
-			defaultSession = "none+i3";
-		};
+    displayManager = {
+      defaultSession = "none+i3";
+    };
 
-		windowManager.i3 = {
-			enable = true;
-			package = pkgs.i3-gaps;
-			extraPackages = with pkgs; [
-				dmenu
-				i3status-rust
-			];
-		};
-	};
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status-rust
+      ];
+    };
+  };
 
-	hardware.nvidia.prime = {
-		offload.enable = true;
-		
-		intelBusId  = "PCI:00:02:0";
-		nvidiaBusId = "PCI:01:00:0";
+  hardware.nvidia.prime = {
+    offload.enable = true;
+    
+    intelBusId  = "PCI:00:02:0";
+    nvidiaBusId = "PCI:01:00:0";
   };
 
   # Configure keymap in X11
@@ -86,60 +86,60 @@ in
 
   # Enable sound via Pipewire
   # sound.enable = false;
-	
-	security.rtkit.enable = true;
-	hardware.pulseaudio.enable = false;
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-	};
+  
+  security.rtkit.enable = true;
+  hardware.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
-		enable = true;
-		touchpad = {
-			tapping = true;
-			naturalScrolling = true;
-		};
-	};
+    enable = true;
+    touchpad = {
+      tapping = true;
+      naturalScrolling = true;
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sidd = {
     isNormalUser = true;
-		createHome = true;
-		uid = 1000;
+    createHome = true;
+    uid = 1000;
     extraGroups = [ "wheel" "networkmanager" "adbusers" ];
-		shell = pkgs.fish;
+    shell = pkgs.fish;
   };
 
-	# Enable flakes
-	nix.package = pkgs.nixUnstable;
-	nix.extraOptions = ''
-		experimental-features = nix-command flakes
-	'';
+  # Enable flakes
+  nix.package = pkgs.nixUnstable;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-		unzip
-		git
+    unzip
+    git
     vim 
     wget
     firefox
-		nvidia-offload
-		stdenv
-		gnumake
+    nvidia-offload
+    stdenv
+    gnumake
 
-		xfce.thunar
-  	# Optionals
-  	xfce.xfconf # Needed to save the preferences
+    xfce.thunar
+    # Optionals
+    xfce.xfconf # Needed to save the preferences
   ];
 
-	services.gvfs.enable = true; # Mount, trash, and other functionalities
-	services.tumbler.enable = true; # Thumbnail support for images
-	
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -149,10 +149,10 @@ in
     enableSSHSupport = true;
   };
 
-	programs.dconf.enable = true;
+  programs.dconf.enable = true;
 
-	# Steam
-	programs.steam.enable = true;
+  # Steam
+  programs.steam.enable = true;
 
   # Android enable
   programs.adb.enable = true;
@@ -162,7 +162,7 @@ in
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   
-	hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
