@@ -7,13 +7,21 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
+  inputs.neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
   outputs = { self, nixpkgs, home-manager, ... }: 
+  let 
+    overlays = [
+      self.inputs.neovim-nightly-overlay.overlay
+    ];
+  in
   {
     homeConfigurations = {
       "sidd@legion" = home-manager.lib.homeManagerConfiguration {
         configuration = {pkgs, ...}: 
           {
             nixpkgs.config = import ./config/config.nix;
+            nixpkgs.overlays = overlays;
             imports = [
               ./modules/android.nix
               ./modules/home-manager.nix

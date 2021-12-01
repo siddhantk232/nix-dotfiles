@@ -6,6 +6,7 @@
 
   programs.neovim = {
     enable = true;
+    package = pkgs.neovim-nightly;
     vimdiffAlias = true;
     extraConfig = builtins.readFile ../config/nvim/init.vim;
     plugins = with pkgs.vimPlugins; [
