@@ -62,7 +62,9 @@
 
 
   # Fish config
-  xdg.configFile."fish/config.fish".text = builtins.readFile ../config/fish/config.fish;
+  xdg.configFile."fish/config.fish".text = "
+  set -x FLUTTER_SDK ${pkgs.flutter.unwrapped}
+  " + builtins.readFile ../config/fish/config.fish;
 
   # Tmux 
   home.file.".tmux.conf".text = builtins.readFile ../config/tmux.conf;
