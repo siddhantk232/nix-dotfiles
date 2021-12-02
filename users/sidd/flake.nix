@@ -27,6 +27,7 @@
               ./modules/home-manager.nix
               ./modules/chat.nix
               ./modules/dev.nix
+              ./modules/direnv.nix
               ./modules/fonts.nix
               ./modules/general.nix
               ./modules/git.nix
