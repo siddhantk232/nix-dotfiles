@@ -110,7 +110,7 @@ in
     isNormalUser = true;
     createHome = true;
     uid = 1000;
-    extraGroups = [ "wheel" "networkmanager" "adbusers" ];
+    extraGroups = [ "wheel" "networkmanager" "adbusers" "docker" ];
     shell = pkgs.fish;
   };
 
@@ -156,6 +156,9 @@ in
 
   # Android enable
   programs.adb.enable = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
 
   # List services that you want to enable:
 

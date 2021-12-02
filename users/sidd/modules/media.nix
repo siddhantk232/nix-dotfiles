@@ -4,5 +4,6 @@
     blender
     vlc
     gimp
+    cmus
   ];
 }

@@ -14,7 +14,7 @@ local servers = {
   tsserver = {},
   gopls = {},
   clangd = {root_dir = function() return vim.loop.cwd() end},
-  hls = {cmd = {"haskell-language-server-8.10.5", "--lsp"}},
+  hls = {},
   dartls = {},
   solargraph = {},
   pyright = {},
