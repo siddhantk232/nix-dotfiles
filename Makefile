@@ -12,4 +12,3 @@ update_hm:
 
 update_os:
 	sudo nixos-rebuild switch --flake . --recreate-lock-file
-
