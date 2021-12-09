@@ -84,6 +84,9 @@ in
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
+  # SSD trim
+  services.fstrim.enable = true;
+
   # Enable sound via Pipewire
   # sound.enable = false;
   
