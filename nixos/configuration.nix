@@ -68,7 +68,18 @@ in
         i3status-rust
       ];
     };
+
+    # Enable touchpad support (enabled default in most desktopManager).
+    libinput = {
+      enable = true;
+      touchpad = {
+        tapping = true;
+        naturalScrolling = true;
+      };
+    };
   };
+
+  services.picom = import ./config/picom.nix { inherit pkgs; };
 
   hardware.nvidia.prime = {
     offload.enable = true;
@@ -97,15 +108,6 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = true;
-      naturalScrolling = true;
-    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
