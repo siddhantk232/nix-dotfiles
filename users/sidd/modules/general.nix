@@ -8,6 +8,7 @@
     jq
     htop
     tree
+    feh
   ];
   xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;
 }
