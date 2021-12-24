@@ -5,5 +5,8 @@
     vlc
     gimp
     cmus
+
+    youtube-dl
+    aria # downloader
   ];
 }
