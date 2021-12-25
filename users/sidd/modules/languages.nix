@@ -7,6 +7,7 @@
     gcc
 
     # Language servers
+    clang-tools
     nodePackages.typescript-language-server
     gopls
     haskell-language-server
@@ -14,10 +15,8 @@
     nodePackages.pyright
     terraform-lsp
     nodePackages.bash-language-server
-    nodePackages.vscode-json-languageserver
     nodePackages.svelte-language-server
-    nodePackages.vscode-css-languageserver-bin
-    nodePackages.vscode-html-languageserver-bin
+    nodePackages.vscode-langservers-extracted
     texlab
   ];
 }
