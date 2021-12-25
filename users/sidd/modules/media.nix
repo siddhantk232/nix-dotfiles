@@ -6,7 +6,7 @@
     gimp
     cmus
 
-    youtube-dl
+    yt-dlp
     aria # downloader
   ];
 }

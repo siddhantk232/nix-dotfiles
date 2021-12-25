@@ -9,6 +9,7 @@
     htop
     tree
     feh
+    rclone
   ];
   xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;
 }
