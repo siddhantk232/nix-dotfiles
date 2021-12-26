@@ -1,14 +1,10 @@
 local nvim_lsp = require("lspconfig")
 
-local mapper = require("siddhant.utils").mapper
-local on_attach_vim_plus_keymaps =
-    require("siddhant.lsp.custom_attach").on_attach_lsp
-
 -- setup flutter
 -- require("siddhant.lsp.flutter")
 
 -- setup compe
-require("siddhant.lsp.compe")
+require("siddhant.lsp.cmp")
 
 local servers = {
   tsserver = {},
@@ -27,6 +23,11 @@ local servers = {
   texlab = {}
 }
 
+local cmp_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local on_attach_vim_plus_keymaps =
+    require("siddhant.lsp.custom_attach").on_attach_lsp
+
+
 for name, opts in pairs(servers) do
   if type(opts) == "function" then
     opts()
@@ -34,7 +35,8 @@ for name, opts in pairs(servers) do
     local client = nvim_lsp[name]
     client.setup(vim.tbl_extend("force", {
       flags = {debounce_text_changes = 150},
-      on_attach = servers[name].on_attach or on_attach_vim_plus_keymaps
+      on_attach = servers[name].on_attach or on_attach_vim_plus_keymaps,
+      capabilities = servers[name].capabilities or cmp_capabilities,
     }, opts))
   end
 end

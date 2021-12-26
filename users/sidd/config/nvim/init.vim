@@ -59,8 +59,6 @@ let g:neoformat_lua_luaformat = {
 
 let mapleader                 = " "
 
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-
 " set filetypes as typescriptreact for syntax highlight
 autocmd BufNewFile,BufRead *.tsx set filetype=typescriptreact
 

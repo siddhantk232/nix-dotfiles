@@ -11,9 +11,19 @@
     extraConfig = builtins.readFile ../config/nvim/init.vim;
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
-      nlua-nvim
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      nvim-cmp
       lsp_extensions-nvim
-      nvim-compe
+      # nvim-compe
+
+      luasnip
+      cmp_luasnip
+
+      nlua-nvim
+
       vim-flutter
 
       popup-nvim
@@ -54,7 +64,7 @@
   xdg.configFile."nvim/lua/siddhant/todo-comments.lua".text = builtins.readFile ../config/nvim/lua/siddhant/todo-comments.lua;
   xdg.configFile."nvim/lua/siddhant/treesitter.lua".text = builtins.readFile ../config/nvim/lua/siddhant/treesitter.lua;
   xdg.configFile."nvim/lua/siddhant/utils/init.lua".text = builtins.readFile ../config/nvim/lua/siddhant/utils/init.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/compe.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/compe.lua;
+  xdg.configFile."nvim/lua/siddhant/lsp/cmp.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/cmp.lua;
   xdg.configFile."nvim/lua/siddhant/lsp/custom_attach.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/custom_attach.lua;
   xdg.configFile."nvim/lua/siddhant/lsp/init.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/init.lua;
   xdg.configFile."nvim/lua/siddhant/lsp/json.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/json.lua;
