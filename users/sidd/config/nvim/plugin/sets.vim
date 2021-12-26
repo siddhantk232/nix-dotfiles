@@ -40,4 +40,8 @@ set shortmess+=c
 
 set colorcolumn=80
 
+" spellcheck
+set spelllang=en_us
+set spellsuggest=best,9
+
 lua require'colorizer'.setup()
