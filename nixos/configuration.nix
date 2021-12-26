@@ -164,6 +164,9 @@ in
 
   # Docker
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "sidd" ];
+
 
   # List services that you want to enable:
 
