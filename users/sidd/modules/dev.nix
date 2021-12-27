@@ -1,7 +1,34 @@
 { config, pkgs, ... }:
+let 
+  cmp-npm = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-npm";
+    src = pkgs.fetchFromGitHub {
+      owner = "David-Kunz";
+      repo = "cmp-npm";
+      rev = "4b6166c3feeaf8dae162e33ee319dc5880e44a29";
+      sha256 = "QggQ+axMaFcUCt2gfSpsDpM0YlxEkAiDCctzfYtceVI=";
+    };
+  };
+  cmp-rg = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-rg";
+    src = pkgs.fetchFromGitHub {
+      owner = "lukas-reineke";
+      repo = "cmp-rg";
+      rev = "7a95aa7eefceed1eac6907889d1d8812b6b051d4";
+      sha256 = "K41dW1QpiOEFPEFOHpHLdB0nJFkshH+Z7D9KyD2S2oM=";
+    };
+  };
+in 
 {
   home.packages = with pkgs; [
     tmux
+
+    # code formatters
+    luaformatter
+    pgformatter
+    haskellPackages.cabal-fmt
+    haskellPackages.stylish-haskell
+    nodePackages.prettier
   ];
 
   programs.neovim = {
@@ -11,13 +38,17 @@
     extraConfig = builtins.readFile ../config/nvim/init.vim;
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
+      nvim-cmp
       cmp-nvim-lsp
+      cmp-nvim-lua
       cmp-buffer
+      cmp-npm
+      cmp-rg
+      cmp-calc
+      cmp-spell
       cmp-path
       cmp-cmdline
-      nvim-cmp
       lsp_extensions-nvim
-      # nvim-compe
 
       luasnip
       cmp_luasnip
