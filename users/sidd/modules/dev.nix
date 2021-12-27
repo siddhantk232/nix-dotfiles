@@ -22,6 +22,7 @@ in
 {
   home.packages = with pkgs; [
     tmux
+    tldr
 
     # code formatters
     luaformatter
