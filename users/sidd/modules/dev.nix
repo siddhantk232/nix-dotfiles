@@ -74,6 +74,7 @@ in
       vim-fugitive
       vim-surround
 
+      indent-blankline-nvim
       gruvbox-community
       lualine-nvim
       i3config-vim
