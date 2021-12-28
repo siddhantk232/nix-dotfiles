@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     brave
+    google-chrome
     bat
     zathura
     fzf
