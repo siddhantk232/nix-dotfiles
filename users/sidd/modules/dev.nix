@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
-let 
+let
   cmp-npm = pkgs.vimUtils.buildVimPlugin {
     name = "cmp-npm";
     src = pkgs.fetchFromGitHub {
@@ -18,11 +18,12 @@ let
       sha256 = "K41dW1QpiOEFPEFOHpHLdB0nJFkshH+Z7D9KyD2S2oM=";
     };
   };
-in 
+in
 {
   home.packages = with pkgs; [
     tmux
     tldr
+    awscli2
 
     # code formatters
     luaformatter
@@ -30,6 +31,7 @@ in
     haskellPackages.cabal-fmt
     haskellPackages.stylish-haskell
     nodePackages.prettier
+    nixpkgs-fmt
   ];
 
   programs.neovim = {
@@ -62,7 +64,10 @@ in
       plenary-nvim
       telescope-nvim
       telescope-fzf-native-nvim
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      (nvim-treesitter.withPlugins
+        (_: builtins.filter
+          (x: x.pname != "tree-sitter-markdown-grammar")
+          pkgs.tree-sitter.allGrammars))
 
       undotree
       emmet-vim
