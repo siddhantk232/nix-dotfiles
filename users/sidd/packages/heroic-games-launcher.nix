@@ -1,4 +1,4 @@
-{ lib, fetchurl, appimageTools, python }:
+{ lib, fetchurl, appimageTools, python, gsettings-desktop-schemas, gtk3}:
 
 let
   pname = "heroic";
@@ -26,6 +26,10 @@ in appimageTools.wrapType2 {
 
     substituteInPlace $out/share/applications/heroic.desktop \
       --replace 'Exec=AppRun' 'Exec=heroic'
+  '';
+
+  profile = ''
+    export XDG_DATA_DIRS=${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}:${gtk3}/share/gsettings-schemas/${gtk3.name}:$XDG_DATA_DIRS
   '';
 
   meta = with lib; {

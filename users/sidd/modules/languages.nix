@@ -5,6 +5,7 @@
     nodejs-16_x
     haskellPackages.ghc
     gcc
+    python310
 
     # Language servers
     clang-tools

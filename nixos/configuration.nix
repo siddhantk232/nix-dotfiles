@@ -99,6 +99,8 @@ in
   # SSD trim
   services.fstrim.enable = true;
 
+  services.locate.enable = true;
+
   # Enable sound via Pipewire
   # sound.enable = false;
   
