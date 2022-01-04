@@ -4,6 +4,7 @@
     go_1_17
     nodejs-16_x
     haskellPackages.ghc
+    ghcid
     gcc
     python310
 
