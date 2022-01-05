@@ -4,11 +4,13 @@
     go_1_17
     nodejs-16_x
     haskellPackages.ghc
-    ghcid
     gcc
     python310
 
-    # Language servers
+    # Language servers/tools
+    ghcid
+    cabal-install
+
     clang-tools
     nodePackages.typescript-language-server
     gopls
