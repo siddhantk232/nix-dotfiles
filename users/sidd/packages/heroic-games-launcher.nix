@@ -1,16 +1,17 @@
-{ lib, fetchurl, appimageTools, python, gsettings-desktop-schemas, gtk3}:
+{ lib, fetchurl, appimageTools, python, gsettings-desktop-schemas, gtk3 }:
 
 let
   pname = "heroic";
-  version = "2.0.0";
+  version = "2.0.1";
   name = "${pname}-${version}";
   src = fetchurl {
     url = "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/Heroic-${version}.AppImage";
-    sha256 = "sha256-GTf5sX+9lKDI4Atb2HkzORSpaat9FzL22cnTunO2ITA=";
+    sha256 = "sha256-fgjhJTygl7qxscrPNUTLYFJj7DJATPoOxSVtu4d+d4w=";
   };
   appimageContents = appimageTools.extractType2 { inherit name src; };
 
-in appimageTools.wrapType2 {
+in
+appimageTools.wrapType2 {
   inherit name src;
 
   extraInstallCommands = ''
