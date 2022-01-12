@@ -133,23 +133,33 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    bind
+    binutils
+    coreutils
+    inetutils
+    fd
+    sd
+    file
     unzip
     git
-    vim 
     wget
+    vim 
     firefox
     nvidia-offload
     stdenv
     gnumake
+    manpages
 
     xfce.thunar
     # Optionals
     xfce.xfconf # Needed to save the preferences
   ];
 
+  documentation.man.generateCaches = true;
+  documentation.dev.enable = true;
+
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
-  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
