@@ -139,6 +139,7 @@ in
     inetutils
     fd
     sd
+    lsof
     file
     unzip
     git
