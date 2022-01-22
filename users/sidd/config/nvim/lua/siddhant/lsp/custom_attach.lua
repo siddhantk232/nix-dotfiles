@@ -13,7 +13,7 @@ M.on_attach_lsp = function(client)
   mapper('n'    , '<leader>lca' , '<cmd> lua vim.lsp.buf.code_action()<CR>')
   mapper('n'    , '<leader>lsh' , '<cmd> lua vim.lsp.buf.signature_help()<CR>')
   mapper('n'    , '<leader>lrn' , '<cmd> lua vim.lsp.buf.rename()<CR>')
-  mapper('n'    , '<leader>h'   , '<cmd> lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+  mapper('n'    , '<leader>h'   , '<cmd> lua vim.diagnostic.open_float()<CR>')
   mapper('n'    , 'lsd'         , '<cmd> lua vim.lsp.buf.show_line_diagnostics()<CR>')
 end
 
