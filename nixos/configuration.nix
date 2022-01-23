@@ -118,7 +118,7 @@ in
     isNormalUser = true;
     createHome = true;
     uid = 1000;
-    extraGroups = [ "wheel" "networkmanager" "adbusers" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "adbusers" "docker" "lxd" ];
     shell = pkgs.fish;
   };
 
@@ -183,6 +183,7 @@ in
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "sidd" ];
 
+  virtualisation.lxd.enable = true;
 
   # List services that you want to enable:
 

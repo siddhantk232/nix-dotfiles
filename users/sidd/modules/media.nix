@@ -9,9 +9,6 @@
 
     yt-dlp
     aria # downloader
-    (pkgs.callPackage ../packages/heroic-games-launcher.nix { })
-    lutris
-    wineWowPackages.base
 
     obs-studio
   ];
