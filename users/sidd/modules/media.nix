@@ -5,6 +5,7 @@
     vlc
     gimp
     cmus
+    newsboat
 
     yt-dlp
     aria # downloader

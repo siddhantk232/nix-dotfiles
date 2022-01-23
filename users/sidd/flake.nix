@@ -34,6 +34,7 @@
               ./modules/i3.nix
               ./modules/languages.nix
               ./modules/media.nix
+              ./modules/newsboat.nix
             ];
           };
 
