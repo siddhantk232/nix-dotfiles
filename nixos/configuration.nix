@@ -23,8 +23,12 @@ in
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.useOSProber = true;
 
   networking.hostName = "codes"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -161,6 +165,15 @@ in
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
+
+  # shared partition setup
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  fileSystems."/home/sidd/shared" = { 
+    device = "/dev/nvme0n1p8";
+    fsType = "ntfs3"; 
+    options = [ "rw" "uid=1000"];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
