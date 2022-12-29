@@ -5,9 +5,9 @@ M.config = {
   settings = {
     svelte = {
       plugin = {
-        html   = { completions = { enable = true, emmet = true } },
+        html = { completions = { enable = true, emmet = true } },
         svelte = { completions = { enable = true, emmet = true } },
-        css    = { completions = { enable = true, emmet = true  } },
+        css = { completions = { enable = true, emmet = true } },
       },
     },
   },

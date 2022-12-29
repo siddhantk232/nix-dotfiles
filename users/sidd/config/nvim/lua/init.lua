@@ -1,42 +1,45 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
-require("siddhant.telescope")
+require "siddhant.telescope"
 
---  _                      _ _   _            
--- | |_ _ __ ___  ___  ___(_) |_| |_ ___ _ __ 
+--  _                      _ _   _
+-- | |_ _ __ ___  ___  ___(_) |_| |_ ___ _ __
 -- | __| '__/ _ \/ _ \/ __| | __| __/ _ \ '__|
--- | |_| | |  __/  __/\__ \ | |_| ||  __/ |   
--- \__|_|  \___|\___||___/_|\__|\__\___|_|   
+-- | |_| | |  __/  __/\__ \ | |_| ||  __/ |
+-- \__|_|  \___|\___||___/_|\__|\__\___|_|
 --
-require("siddhant.treesitter")
+require "siddhant.treesitter"
 
--- _                            __ _       
--- | |___ _ __   ___ ___  _ __  / _(_) __ _ 
+-- _                            __ _
+-- | |___ _ __   ___ ___  _ __  / _(_) __ _
 -- | / __| '_ \ / __/ _ \| '_ \| |_| |/ _` |
 -- | \__ \ |_) | (_| (_) | | | |  _| | (_| |
 -- |_|___/ .__/ \___\___/|_| |_|_| |_|\__, |
---      |_|                          |___/ 
+--      |_|                          |___/
 --
-require("siddhant.lsp")
+require "siddhant.lsp"
 
---  _             _ _            
--- | |_   _  __ _| (_)_ __   ___ 
+--  _             _ _
+-- | |_   _  __ _| (_)_ __   ___
 -- | | | | |/ _` | | | '_ \ / _ \
 -- | | |_| | (_| | | | | | |  __/
 -- |_|\__,_|\__,_|_|_|_| |_|\___|
 --
-require("siddhant.lualine")
+require "siddhant.lualine"
 
-require("siddhant.todo-comments")
+require "siddhant.todo-comments"
 
-require("siddhant.keys")
+require "siddhant.keys"
 
-require("siddhant.nvim-tree")
+require "siddhant.nvim-tree"
 
 vim.opt.list = true
-vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append "eol:↴"
 
 require("indent_blankline").setup {
-    show_end_of_line = true,
+  char = '┊',
+  show_trailing_blankline_indent = false,
+  show_end_of_line = true,
 }
 
+require("headlines").setup()

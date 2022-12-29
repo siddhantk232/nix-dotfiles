@@ -38,7 +38,7 @@
                 # ./modules/android.nix
                 ./modules/home-manager.nix
                 ./modules/chat.nix
-                # ./modules/dev.nix
+                ./modules/nvim.nix
                 ./modules/fish.nix
                 ./modules/tmux.nix
                 # ./modules/direnv.nix
@@ -46,7 +46,7 @@
                 ./modules/general.nix
                 ./modules/git.nix
                 ./modules/i3.nix
-                # ./modules/languages.nix
+                ./modules/languages.nix
                 ./modules/media.nix
                 ./modules/newsboat.nix
               ];

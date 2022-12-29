@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-file=`find ~/materials -type f -name '*.pdf' | fzf`
+file=`find ~/shared/materials ~/Documents -type f -name '*.pdf' | fzf`
 
 # open zathura in background and exit
 if [ ! -z "$file" ]; then

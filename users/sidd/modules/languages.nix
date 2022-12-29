@@ -2,25 +2,10 @@
 {
   home.packages = with pkgs; [
     go
-    nodejs-16_x
+    nodejs
     haskellPackages.ghc
     gcc
-    python310
-
-    # Language servers/tools
-    ghcid
+    python311
     cabal-install
-
-    clang-tools
-    nodePackages.typescript-language-server
-    gopls
-    haskell-language-server
-    solargraph
-    nodePackages.pyright
-    terraform-lsp
-    nodePackages.bash-language-server
-    nodePackages.svelte-language-server
-    nodePackages.vscode-langservers-extracted
-    texlab
   ];
 }
