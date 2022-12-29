@@ -8,7 +8,7 @@ userswitch:
 	home-manager switch --flake "./users/sidd/"
 
 update_hm:
-	home-manager switch --flake "./users/sidd/" --recreate-lock-file
+	nix run home-manager -- switch --flake "./users/sidd/" --recreate-lock-file
 
 update_os:
 	sudo nixos-rebuild switch --flake . --recreate-lock-file

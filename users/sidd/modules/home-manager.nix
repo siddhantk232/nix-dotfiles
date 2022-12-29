@@ -1,6 +1,5 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 {
-  home.stateVersion = "20.09";
   programs.home-manager.enable = true;
   home.packages = with pkgs; [
     lxappearance
@@ -16,7 +15,7 @@
     bc
     ripgrep
     nitrogen
-    pass-otp
+    (pass.withExtensions (exts: [ exts.pass-otp  ]))
   ];
   
   home.sessionVariables = {

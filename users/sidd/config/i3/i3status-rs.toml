@@ -1,5 +1,13 @@
 theme = "gruvbox-dark"
-icons = "material-nf"
+icons = "none"
+
+[[block]]
+block = "pomodoro"
+length = 90
+break_length = 5
+message = "Take a break!"
+break_message = "Back to work!"
+notifier = "notifysend"
 
 [[block]]
 block = "disk_space"
@@ -10,7 +18,7 @@ unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
-format = "{icon} {used}"
+format = "porn_folder {used}"
 
 [[block]]
 block = "memory"
@@ -45,6 +53,6 @@ format = "%a %d/%m %R"
 
 [[block]]
 block = "battery"
-format = "{percentage}% {time}"
-interval = 10
+format = "{percentage}%"
+interval = 30
 

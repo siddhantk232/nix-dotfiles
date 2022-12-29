@@ -26,7 +26,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "legion"; # Define your hostname.
+  networking.hostName = "codes"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
@@ -149,7 +149,7 @@ in
     nvidia-offload
     stdenv
     gnumake
-    manpages
+    man-pages
 
     xfce.thunar
     # Optionals
@@ -175,28 +175,15 @@ in
   # Steam
   programs.steam.enable = true;
 
-  # Android enable
-  programs.adb.enable = true;
-
   # Docker
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "sidd" ];
 
-  virtualisation.lxd.enable = true;
-
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   
   hardware.bluetooth.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -205,6 +192,5 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.05"; # Did you read the comment?
-
 }
 

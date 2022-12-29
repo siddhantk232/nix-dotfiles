@@ -7,7 +7,9 @@ set -x BROWSER brave
 set -x TERM st
 set -x LC_ALL en_US.UTF-8
 set -x BAT_THEME gruvbox-dark
-set -x PATH $PATH ~/projects/.dotfiles/users/sidd/config/scripts
+set -x PATH $PATH ~/bin
+set -x PATH $PATH /opt/android-studio/bin
+set -x PATH $PATH ~/flutter/bin
 
 # config aliases (all lowercase and starts with c)
 alias config "nvim ~/projects/.dotfiles"
@@ -30,3 +32,4 @@ bind -M insert \ce 'pdfs'
 # enable vi
 fish_vi_key_bindings
 
+fish_ssh_agent

@@ -3,7 +3,7 @@ set $mod Mod4
 set $inner_gaps 5
 set $outer_gaps 0
 set $term st
-set $BROWSER brave
+set $BROWSER brave-browser
 
 font pango: Fira Code 10
 
@@ -199,7 +199,7 @@ bar {
     font pango: Fira Code 10
 
     position bottom
-    status_command i3status-rs
+    status_command i3status-rs ~/.config/i3/i3status-rs.toml
     colors {
         separator          #666666
         background         #222222
@@ -212,8 +212,10 @@ bar {
 }
 
 # startup programs
-exec nitrogen --restore
-exec picom --experimental-backends --backend glx --xrender-sync-fence
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom --experimental-backends --backend glx --xrender-sync-fence
 exec --no-startup-id nm-applet
+exec --no-startup-id goldendict
+exec --no-startup-id blueman-applet
 
 exec --no-startup-id setxkbmap -option compose:ralt

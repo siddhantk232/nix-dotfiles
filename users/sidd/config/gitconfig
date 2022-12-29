@@ -26,6 +26,7 @@
     line-numbers = true
     syntax-theme = gruvbox-dark
     side-by-side = true
+    navigate     = true
 
 [interactive]
     diffFilter = delta --color-only

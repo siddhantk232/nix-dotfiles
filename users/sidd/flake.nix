@@ -14,33 +14,44 @@
     overlays = [
       self.inputs.neovim-nightly-overlay.overlay
     ];
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in
   {
     homeConfigurations = {
-      "sidd@legion" = home-manager.lib.homeManagerConfiguration {
-        configuration = {pkgs, ...}: 
-          {
-            nixpkgs.config = import ./config/config.nix;
-            nixpkgs.overlays = overlays;
-            imports = [
-              ./modules/android.nix
-              ./modules/home-manager.nix
-              ./modules/chat.nix
-              ./modules/dev.nix
-              ./modules/direnv.nix
-              ./modules/fonts.nix
-              ./modules/general.nix
-              ./modules/git.nix
-              ./modules/i3.nix
-              ./modules/languages.nix
-              ./modules/media.nix
-              ./modules/newsboat.nix
-            ];
-          };
+      "sidd@codes" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+              {
+                home = {
+                  username = "sidd";
+                  homeDirectory = "/home/sidd";
+                  stateVersion = "20.09";
+                };
 
-        system = "x86_64-linux";
-        homeDirectory = "/home/sidd";
-        username = "sidd";
+              nixpkgs.overlays = overlays;
+                
+              imports = [
+                # ./modules/android.nix
+                ./modules/home-manager.nix
+                ./modules/chat.nix
+                # ./modules/dev.nix
+                ./modules/fish.nix
+                ./modules/tmux.nix
+                # ./modules/direnv.nix
+                ./modules/fonts.nix
+                ./modules/general.nix
+                ./modules/git.nix
+                ./modules/i3.nix
+                # ./modules/languages.nix
+                ./modules/media.nix
+                ./modules/newsboat.nix
+              ];
+            }
+        ];
       };
     };
   };

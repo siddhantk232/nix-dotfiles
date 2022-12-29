@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    go_1_17
+    go
     nodejs-16_x
     haskellPackages.ghc
     gcc
