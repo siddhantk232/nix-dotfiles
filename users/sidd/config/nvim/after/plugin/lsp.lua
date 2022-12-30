@@ -38,8 +38,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
-  ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-  ["<C-d>"] = cmp.mapping.scroll_docs(4),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -81,7 +79,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>lrn", vim.lsp.buf.rename, opts)
   vim.keymap.set("n", "<leader>lrr", vim.lsp.buf.references, opts)
   vim.keymap.set("n", "<leader>h", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "lsd", vim.lsp.buf.show_line_diagnostics, opts)
   vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
   vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
 end)
