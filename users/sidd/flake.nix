@@ -9,10 +9,16 @@
 
   inputs.neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
+  inputs.emacs-overlay = {
+    url = "github:nix-community/emacs-overlay";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   outputs = { self, nixpkgs, home-manager, ... }: 
   let 
-    overlays = [
+    overlays = [ 
       self.inputs.neovim-nightly-overlay.overlay
+      self.inputs.emacs-overlay.overlay
     ];
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -39,6 +45,7 @@
                 ./modules/home-manager.nix
                 ./modules/chat.nix
                 ./modules/nvim.nix
+                ./modules/emacs
                 ./modules/fish.nix
                 ./modules/tmux.nix
                 # ./modules/direnv.nix

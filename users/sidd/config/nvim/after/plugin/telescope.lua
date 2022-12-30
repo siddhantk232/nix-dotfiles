@@ -2,7 +2,7 @@ local actions = require "telescope.actions"
 local telescope = require "telescope"
 
 local mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = false })
+  vim.keymap.set(mode, key, result, { noremap = true, silent = false })
 end
 
 telescope.setup {
@@ -18,15 +18,15 @@ telescope.setup {
     mappings = { i = { ["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist } },
   },
   extensions = {
-    fzf = {
-      override_generic_sorter = false,
-      override_file_sorter = true,
-      fuzzy = true,
-    },
+    -- fzf = {
+    --   override_generic_sorter = false,
+    --   override_file_sorter = true,
+    --   fuzzy = true,
+    -- },
   },
 }
 
-telescope.load_extension "fzf"
+-- telescope.load_extension "fzf"
 
 local M = {}
 

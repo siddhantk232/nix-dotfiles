@@ -29,25 +29,20 @@
     vimdiffAlias = true;
   };
 
-  xdg.configFile."nvim/plugin/colors.vim".text = builtins.readFile ../config/nvim/plugin/colors.vim;
-  xdg.configFile."nvim/plugin/sets.vim".text = builtins.readFile ../config/nvim/plugin/sets.vim;
+  xdg.configFile."nvim/init.lua".source = ../config/nvim/init.lua;
 
-  xdg.configFile."nvim/init.vim".text = builtins.readFile ../config/nvim/init.vim;
+  xdg.configFile."nvim/lua/siddhant/init.lua".source = ../config/nvim/lua/siddhant/init.lua;
+  xdg.configFile."nvim/lua/siddhant/packer.lua".source = ../config/nvim/lua/siddhant/packer.lua;
+  xdg.configFile."nvim/lua/siddhant/remap.lua".source = ../config/nvim/lua/siddhant/remap.lua;
+  xdg.configFile."nvim/lua/siddhant/set.lua".source = ../config/nvim/lua/siddhant/set.lua;
 
-  xdg.configFile."nvim/lua/init.lua".text = builtins.readFile ../config/nvim/lua/init.lua;
-
-  xdg.configFile."nvim/lua/siddhant/keys.lua".text = builtins.readFile ../config/nvim/lua/siddhant/keys.lua;
-  xdg.configFile."nvim/lua/siddhant/lualine.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lualine.lua;
-  xdg.configFile."nvim/lua/siddhant/nvim-tree.lua".text = builtins.readFile ../config/nvim/lua/siddhant/nvim-tree.lua;
-  xdg.configFile."nvim/lua/siddhant/telescope.lua".text = builtins.readFile ../config/nvim/lua/siddhant/telescope.lua;
-  xdg.configFile."nvim/lua/siddhant/todo-comments.lua".text = builtins.readFile ../config/nvim/lua/siddhant/todo-comments.lua;
-  xdg.configFile."nvim/lua/siddhant/treesitter.lua".text = builtins.readFile ../config/nvim/lua/siddhant/treesitter.lua;
-  xdg.configFile."nvim/lua/siddhant/utils/init.lua".text = builtins.readFile ../config/nvim/lua/siddhant/utils/init.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/cmp.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/cmp.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/custom_attach.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/custom_attach.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/init.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/init.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/json.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/json.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/svelte.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/svelte.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/tabnine.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/tabnine.lua;
-  xdg.configFile."nvim/lua/siddhant/lsp/diagnosticls.lua".text = builtins.readFile ../config/nvim/lua/siddhant/lsp/diagnosticls.lua;
+  xdg.configFile."nvim/after/plugin/colors.lua".source = ../config/nvim/after/plugin/colors.lua;
+  xdg.configFile."nvim/after/plugin/fugitive.lua".source = ../config/nvim/after/plugin/fugitive.lua;
+  xdg.configFile."nvim/after/plugin/lsp.lua".source = ../config/nvim/after/plugin/lsp.lua;
+  xdg.configFile."nvim/after/plugin/lualine.lua".source = ../config/nvim/after/plugin/lualine.lua;
+  xdg.configFile."nvim/after/plugin/nvim-tree.lua".source = ../config/nvim/after/plugin/nvim-tree.lua;
+  xdg.configFile."nvim/after/plugin/telescope.lua".source = ../config/nvim/after/plugin/telescope.lua;
+  xdg.configFile."nvim/after/plugin/todo-comments.lua".source = ../config/nvim/after/plugin/todo-comments.lua;
+  xdg.configFile."nvim/after/plugin/treesitter.lua".source = ../config/nvim/after/plugin/treesitter.lua;
+  xdg.configFile."nvim/after/plugin/zenmode.lua".source = ../config/nvim/after/plugin/zenmode.lua;
 }
