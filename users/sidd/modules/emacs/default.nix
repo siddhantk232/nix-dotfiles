@@ -1,12 +1,12 @@
 { pkgs, ... }:
 let
   myEmacs = (pkgs.emacsWithPackagesFromUsePackage {
+    defaultInitFile = true;
+    package = pkgs.emacsUnstable;
+    alwaysEnsure = true;
     config = ''
       (load-file "~/.config/emacs/init.el")
     '';
-    defaultInitFile = true;
-    package = pkgs.emacsPgtkNativeComp;
-    alwaysEnsure = true;
   });
 in
 {
