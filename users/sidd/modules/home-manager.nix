@@ -15,9 +15,9 @@
     bc
     ripgrep
     nitrogen
-    (pass.withExtensions (exts: [ exts.pass-otp  ]))
+    (pass.withExtensions (exts: [ exts.pass-otp ]))
   ];
-  
+
   home.sessionVariables = {
     EDITOR = "nvim";
   };

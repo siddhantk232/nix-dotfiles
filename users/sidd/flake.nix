@@ -14,32 +14,32 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
-  let 
-    overlays = [ 
-      self.inputs.neovim-nightly-overlay.overlay
-      self.inputs.emacs-overlay.overlay
-    ];
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in
-  {
-    homeConfigurations = {
-      "sidd@codes" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-              {
-                home = {
-                  username = "sidd";
-                  homeDirectory = "/home/sidd";
-                  stateVersion = "20.09";
-                };
+  outputs = { self, nixpkgs, home-manager, ... }:
+    let
+      overlays = [
+        self.inputs.neovim-nightly-overlay.overlay
+        self.inputs.emacs-overlay.overlay
+      ];
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      homeConfigurations = {
+        "sidd@codes" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            {
+              home = {
+                username = "sidd";
+                homeDirectory = "/home/sidd";
+                stateVersion = "20.09";
+              };
 
               nixpkgs.overlays = overlays;
-                
+
               imports = [
                 # ./modules/android.nix
                 ./modules/home-manager.nix
@@ -58,8 +58,10 @@
                 ./modules/newsboat.nix
               ];
             }
-        ];
+          ];
+        };
       };
+
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     };
-  };
 }

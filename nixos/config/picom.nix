@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  enable               = true;
+  enable = true;
 
-  activeOpacity        = 0.9999;
-  inactiveOpacity      = 0.9999;
+  activeOpacity = 0.9999;
+  inactiveOpacity = 0.9999;
 }

@@ -9,5 +9,6 @@
       modules = [ ./nixos/configuration.nix ];
     };
 
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
   };
 }

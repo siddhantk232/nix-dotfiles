@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 let
   myEmacs = (pkgs.emacsWithPackagesFromUsePackage {
     config = ''

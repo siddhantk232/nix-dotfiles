@@ -4,6 +4,6 @@
     gitAndTools.delta
     gitAndTools.gh
   ];
-  
+
   home.file.".gitconfig".text = builtins.readFile ../config/gitconfig;
 }

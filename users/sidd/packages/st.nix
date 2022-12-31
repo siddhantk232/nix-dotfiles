@@ -1,6 +1,6 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
 pkgs.stdenv.mkDerivation rec {
-  pname   = "siddhantk232-st";
+  pname = "siddhantk232-st";
   version = "1.0.0";
 
   src = pkgs.fetchFromGitHub {

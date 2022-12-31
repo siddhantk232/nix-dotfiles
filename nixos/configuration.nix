@@ -4,7 +4,7 @@
 
 { config, pkgs, ... }:
 
-let 
+let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -15,7 +15,8 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -33,7 +34,7 @@ in
 
   networking.hostName = "codes"; # Define your hostname.
   networking.networkmanager.enable = true;
-  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -89,8 +90,8 @@ in
 
   hardware.nvidia.prime = {
     offload.enable = true;
-    
-    intelBusId  = "PCI:00:02:0";
+
+    intelBusId = "PCI:00:02:0";
     nvidiaBusId = "PCI:01:00:0";
   };
 
@@ -108,7 +109,7 @@ in
 
   # Enable sound via Pipewire
   # sound.enable = false;
-  
+
   security.rtkit.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
@@ -149,7 +150,7 @@ in
     unzip
     git
     wget
-    vim 
+    vim
     firefox
     nvidia-offload
     stdenv
@@ -170,10 +171,10 @@ in
   # shared partition setup
   boot.supportedFilesystems = [ "ntfs" ];
 
-  fileSystems."/home/sidd/shared" = { 
+  fileSystems."/home/sidd/shared" = {
     device = "/dev/nvme0n1p8";
-    fsType = "ntfs3"; 
-    options = [ "rw" "uid=1000"];
+    fsType = "ntfs3";
+    options = [ "rw" "uid=1000" ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -196,7 +197,7 @@ in
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-  
+
   hardware.bluetooth.enable = true;
 
   # This value determines the NixOS release from which the default

@@ -86,16 +86,19 @@
   (evil-set-initial-state 'dashboard-mode 'normal))
 
 (use-package evil-commentary
+  :ensure t
   :after evil
   :config
   (evil-commentary-mode 1))
 
 (use-package evil-numbers
+  :ensure t
   :after evil
   :config
   (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt))
 
 (use-package evil-collection
+  :ensure t
   :after evil
   :config
   (evil-collection-init))
@@ -143,6 +146,7 @@
   (setq evil-auto-indent nil))
 
 (use-package org
+  :ensure t
   :hook (org-mode . sc/org-mode-setup)
   :config
   (require 'org-tempo)
@@ -250,6 +254,7 @@
   (company-idle-delay 0.0))
 
 (use-package company-box
+  :ensure t
   :hook (company-mode . company-box-mode))
 
 
@@ -269,6 +274,7 @@
 (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
 
 (use-package counsel-projectile
+  :ensure t
   :disabled t
   :after projectile
   :config (counsel-projectile-mode))
@@ -306,6 +312,7 @@
   :hook ((rjsx-mode . prettier-js-mode)))
 
 (use-package typescript-mode
+  :ensure t
   :mode "\\.ts\\'"
   :hook (typescript-mode)
   :config
