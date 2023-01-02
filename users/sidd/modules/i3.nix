@@ -5,5 +5,6 @@
   home.packages = [
     (pkgs.callPackage ../packages/st.nix { })
     (pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; })
+    pkgs.betterlockscreen
   ];
 }

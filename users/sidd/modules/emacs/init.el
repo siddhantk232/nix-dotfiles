@@ -39,6 +39,14 @@
 (use-package gruvbox-theme
   :ensure t)
 
+(use-package mindre-theme
+    :ensure t
+    :custom
+    (mindre-use-more-bold nil)
+    (mindre-use-faded-lisp-parens t)
+    :config
+    (load-theme 'mindre t))
+
 (setq inhibit-startup-message t)
 (setq scroll-conservatively 100)
 (setq ring-bell-function 'ignore)
@@ -236,14 +244,6 @@
 (global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)
 (global-set-key (kbd "C-x b") 'ibuffer)
 
-
-(use-package yasnippet
-  :ensure t
-  :config
-  (setq yas-snippet-dirs '("~/.dotfiles/emacs/.emacs.d/snippets"))
-  (yas-global-mode 1))
-
-
 (use-package company
   :ensure t
   :init (company-mode)
@@ -257,28 +257,6 @@
   :ensure t
   :hook (company-mode . company-box-mode))
 
-
-(use-package projectile
-  :ensure t
-  :custom
-  (projectile-switch-project-action 'projectile-dired)
-  (projectile-keymap-prefix (kbd "C-c p"))
-  (projectile-enable-caching t)
-  (projectile-completion-system 'ivy)
-  :config
-  (projectile-mode 1))
-
-
-;; projectile project search path
-(setq projectile-project-search-path '(("~/projects/" . 3)))
-(define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
-
-(use-package counsel-projectile
-  :ensure t
-  :disabled t
-  :after projectile
-  :config (counsel-projectile-mode))
-
 (use-package treemacs
   :ensure t
   :custom
@@ -289,63 +267,3 @@
 (use-package magit
   :ensure t)
 (global-set-key (kbd "C-x g") 'magit-status)
-
-(use-package counsel-css
-  :ensure t)
-
-(use-package emmet-mode
-  :ensure t
-  :hook (web-mode rjsx-mode))
-
-(use-package rainbow-mode
-  :ensure t)
-
-(use-package rjsx-mode
-  :ensure t
-  :mode
-  (("\\.jsx\\'"  . rjsx-mode)
-   ("\\.tsx\\'" . rjsx-mode)))
-
-(use-package prettier-js
-  :ensure t
-  :after (rjsx-mode)
-  :hook ((rjsx-mode . prettier-js-mode)))
-
-(use-package typescript-mode
-  :ensure t
-  :mode "\\.ts\\'"
-  :hook (typescript-mode)
-  :config
-  (setq typescript-indent-level 2))
-
-(use-package web-mode
-  :ensure t
-  :hook
-  ((web-mode)
-   (web-mode . rainbow-mode))
-  :config
-  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-  ;; If the user has installed `vue-mode' then, by appending this to
-  ;; `auto-mode-alist' rather than prepending it, its autoload will have
-  ;; priority over this one.
-  (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode) 'append)
-  (defun my-web-mode-hook ()
-    "Hooks for Web mode."
-    (setq web-mode-code-indent-offset 4
-          web-mode-css-indent-offset 2
-          web-mode-markup-indent-offset 2))
-  (add-hook 'web-mode-hook  'my-web-mode-hook))
-
-
-(use-package go-mode
-  :ensure t)
-

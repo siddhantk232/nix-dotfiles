@@ -7,6 +7,13 @@ let
     config = ''
       (load-file "~/.config/emacs/init.el")
     '';
+    extraEmacsPackages = epkgs: with epkgs; [
+      use-package
+      evil
+      evil-collection
+      evil-commentary
+      magit
+    ];
   });
 in
 {
@@ -14,5 +21,10 @@ in
     enable = true;
     package = myEmacs;
   };
+
+  home.packages = [
+    pkgs.cantarell-fonts
+  ];
+
   xdg.configFile."emacs/init.el".source = ./init.el;
 }
