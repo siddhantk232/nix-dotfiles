@@ -156,6 +156,8 @@ in
     stdenv
     gnumake
     man-pages
+    libnotify
+    dunst
 
     xfce.thunar
     # Optionals

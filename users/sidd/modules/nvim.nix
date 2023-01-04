@@ -6,6 +6,8 @@
     vimdiffAlias = true;
   };
 
+  home.packages = [ pkgs.clang-tools ];
+
   xdg.configFile."nvim/init.lua".source = ../config/nvim/init.lua;
 
   xdg.configFile."nvim/lua/siddhant/init.lua".source = ../config/nvim/lua/siddhant/init.lua;
