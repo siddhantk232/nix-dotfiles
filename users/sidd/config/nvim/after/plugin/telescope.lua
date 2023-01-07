@@ -18,11 +18,11 @@ telescope.setup {
     mappings = { i = { ["<C-x>"] = false, ["<C-q>"] = actions.send_to_qflist } },
   },
   extensions = {
-    -- fzf = {
-    --   override_generic_sorter = false,
-    --   override_file_sorter = true,
-    --   fuzzy = true,
-    -- },
+    fzf = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+      fuzzy = true,
+    },
   },
 }
 

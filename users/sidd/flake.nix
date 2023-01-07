@@ -48,7 +48,7 @@
                 ./modules/emacs
                 ./modules/fish.nix
                 ./modules/tmux.nix
-                # ./modules/direnv.nix
+                ./modules/direnv.nix
                 ./modules/fonts.nix
                 ./modules/general.nix
                 ./modules/git.nix
