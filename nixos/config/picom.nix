@@ -3,6 +3,6 @@
 {
   enable = true;
 
-  activeOpacity = 0.9999;
-  inactiveOpacity = 0.9999;
+  activeOpacity = 1;
+  inactiveOpacity = 0.99;
 }
