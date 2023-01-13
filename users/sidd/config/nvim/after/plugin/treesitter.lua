@@ -1,8 +1,18 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "help", "javascript", "typescript", 
-                       "c", "lua", "rust",
-                       "elm", "elixir", "clojure",
-                       "go", "haskell", "graphql" },
+require("nvim-treesitter.configs").setup {
+  ensure_installed = {
+    "help",
+    "javascript",
+    "typescript",
+    "c",
+    "lua",
+    "rust",
+    "elm",
+    "elixir",
+    "clojure",
+    "go",
+    "haskell",
+    "graphql",
+  },
 
   incremental_selection = {
     enable = true,
@@ -51,4 +61,3 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
 }
-

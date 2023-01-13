@@ -39,14 +39,6 @@
 (use-package gruvbox-theme
   :ensure t)
 
-(use-package mindre-theme
-    :ensure t
-    :custom
-    (mindre-use-more-bold nil)
-    (mindre-use-faded-lisp-parens t)
-    :config
-    (load-theme 'mindre t))
-
 (setq inhibit-startup-message t)
 (setq scroll-conservatively 100)
 (setq ring-bell-function 'ignore)

@@ -1,9 +1,9 @@
-function ColorMyPencils(color) 
-	color = color or "gruvbox"
-	vim.cmd.colorscheme(color)
+function ColorMyPencils(color)
+  color = color or "gruvbox"
+  vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 ColorMyPencils()
@@ -15,7 +15,6 @@ ColorMyPencils()
 --   set background=dark
 --   " let ayucolor="dark"
 --   let g:gruvbox_contrast_dark = 'hard'
-  
 --   if exists('+termguicolors')
 --       let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 --       let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
