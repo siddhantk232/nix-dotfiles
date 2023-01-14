@@ -6,7 +6,10 @@
     vimdiffAlias = true;
   };
 
-  home.packages = [ pkgs.clang-tools ];
+  home.packages = with pkgs; [
+    clang-tools
+    lldb
+  ];
 
   xdg.configFile."nvim".source = ../config/nvim;
 }
