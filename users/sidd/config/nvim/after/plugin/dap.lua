@@ -21,3 +21,7 @@ dap.configurations.cpp = {
 }
 
 dap.configurations.c = dap.configurations.cpp
+
+require("nvim-dap-virtual-text").setup()
+
+require("dapui").setup()
