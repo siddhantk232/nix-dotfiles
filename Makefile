@@ -5,7 +5,7 @@ osswitch:
 	sudo nixos-rebuild switch --flake .
 
 userswitch:
-	nix run home-manager -- switch --flake "./users/sidd/"
+	home-manager switch --flake "./users/sidd/"
 
 update_hm:
 	nix run home-manager -- switch --flake "./users/sidd/" --recreate-lock-file

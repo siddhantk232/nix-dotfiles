@@ -6,7 +6,7 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-ColorMyPencils()
+ColorMyPencils("tokyonight-night")
 
 -- " https://github.com/awesome-streamers/awesome-streamerrc/blob/master/ThePrimeagen/plugin/colors.vim
 
