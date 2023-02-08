@@ -9,7 +9,6 @@ lsp.ensure_installed {
   "rust_analyzer",
   "clangd",
   "gopls",
-  "hls",
   "pyright",
   "bashls",
   "jsonls",
