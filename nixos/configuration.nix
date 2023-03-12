@@ -157,7 +157,6 @@ in
     gnumake
     man-pages
     libnotify
-    dunst
 
     xfce.thunar
     # Optionals
@@ -201,6 +200,14 @@ in
   # services.openssh.enable = true;
 
   hardware.bluetooth.enable = true;
+  systemd.user.services."dunst" = {
+    enable = true;
+    description = "";
+    wantedBy = [ "default.target" ];
+    serviceConfig.Restart = "always";
+    serviceConfig.RestartSec = 2;
+    serviceConfig.ExecStart = "${pkgs.dunst}/bin/dunst";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -5,4 +5,6 @@
     tdesktop
     # slack
   ];
+
+  services.dunst.enable = true;
 }
