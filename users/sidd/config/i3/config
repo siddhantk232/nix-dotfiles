@@ -187,6 +187,8 @@ bindsym Control+Shift+l exec betterlockscreen -l
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="math"]     move scratchpad
 
+for_window [instance="dropdown"] resize set 1280 720
+
 # create a tmux session with a window for browsing my vimwiki
 exec --no-startup-id $term -n dropdown -e tmux new -s scratch -n DIARY "cd ~/vimwiki && nvim todo.md"
 # simple calculator like operations

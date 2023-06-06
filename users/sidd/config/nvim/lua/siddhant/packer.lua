@@ -67,7 +67,6 @@ return require("packer").startup(function(use)
   use "tpope/vim-surround"
 
   use "gruvbox-community/gruvbox"
-  use 'folke/tokyonight.nvim'
   use "hoob3rt/lualine.nvim"
   use "mboughaba/i3config.vim"
   use "norcalli/nvim-colorizer.lua"
