@@ -58,7 +58,7 @@
 (display-fill-column-indicator-mode 1)
 
 ;; Transparency
-(set-frame-parameter (selected-frame) 'alpha '(97 97))
+; (set-frame-parameter (selected-frame) 'alpha '(97 97))
 
 (require 'ansi-color)
 (defun sc/ansi-colorize-buffer ()
