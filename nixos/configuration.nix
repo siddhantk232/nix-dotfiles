@@ -119,6 +119,10 @@ in
     pulse.enable = true;
   };
 
+  boot.extraModprobeConfig = ''
+    options snd-hda-intel model=dell-headset-multi
+  '';
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sidd = {
     isNormalUser = true;
