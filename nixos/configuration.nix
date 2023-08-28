@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
@@ -211,6 +211,16 @@ in
     serviceConfig.Restart = "always";
     serviceConfig.RestartSec = 2;
     serviceConfig.ExecStart = "${pkgs.dunst}/bin/dunst";
+  };
+
+  specialisation = {
+    external-display.configuration = {
+      system.nixos.tags = [ "external-display" ];
+      hardware.nvidia = {
+        prime.offload.enable = lib.mkForce false;
+        powerManagement.enable = lib.mkForce false;
+      };
+    };
   };
 
   # This value determines the NixOS release from which the default
