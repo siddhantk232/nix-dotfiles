@@ -8,6 +8,8 @@ end
 
 ColorMyPencils()
 
+require'colorizer'.setup()
+
 -- " https://github.com/awesome-streamers/awesome-streamerrc/blob/master/ThePrimeagen/plugin/colors.vim
 
 -- fun! SetColors()

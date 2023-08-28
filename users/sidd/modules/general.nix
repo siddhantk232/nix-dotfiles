@@ -14,6 +14,9 @@
     p7zip
     tldr
     awscli2
+
+    vscode-fhs
+    (pkgs.callPackage ../packages/cisco.nix { })
   ];
   xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;
 }
