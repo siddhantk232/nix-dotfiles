@@ -190,6 +190,8 @@ in
     enableSSHSupport = true;
   };
 
+  programs.noisetorch.enable = true;
+
   programs.dconf.enable = true;
 
   # Steam

@@ -15,7 +15,7 @@
     tldr
     awscli2
 
-    vscode-fhs
+    vscode
     (pkgs.callPackage ../packages/cisco.nix { })
   ];
   xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;
