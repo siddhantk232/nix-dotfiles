@@ -14,6 +14,11 @@
     p7zip
     tldr
     awscli2
+    arandr
+
+    texlive.combined.scheme-small
+
+    cloc
 
     vscode
     (pkgs.callPackage ../packages/cisco.nix { })
