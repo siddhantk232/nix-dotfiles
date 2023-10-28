@@ -2,7 +2,7 @@
 let
   myEmacs = (pkgs.emacsWithPackagesFromUsePackage {
     defaultInitFile = true;
-    package = pkgs.emacsUnstable;
+    package = pkgs.emacs-unstable;
     alwaysEnsure = true;
     config = ''
       (load-file "~/.config/emacs/init.el")
