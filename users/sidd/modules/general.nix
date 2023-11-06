@@ -22,6 +22,8 @@
 
     vscode
     (pkgs.callPackage ../packages/cisco.nix { })
+
+    zoom-us
   ];
   xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;
 }
