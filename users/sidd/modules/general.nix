@@ -22,6 +22,7 @@
 
     vscode
     (pkgs.callPackage ../packages/cisco.nix { })
+    jetbrains.clion
 
     zoom-us
   ];

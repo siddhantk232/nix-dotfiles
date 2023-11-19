@@ -9,6 +9,8 @@
   home.packages = with pkgs; [
     clang-tools
     lldb
+
+    tree-sitter # not required by nvim
   ];
 
   xdg.configFile."nvim".source = ../config/nvim;
