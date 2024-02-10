@@ -11,5 +11,6 @@
     https://lexi-lambda.github.io/feeds/all.rss.xml
     https://blog.ncase.me/rss/
     https://www.scattered-thoughts.net/atom.xml
+    https://buttondown.email/pdubroy/rss
   '';
 }

@@ -28,12 +28,12 @@ return require("packer").startup(function(use)
   }
 
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use "nvim-treesitter/nvim-treesitter-context"
   use "nvim-treesitter/playground"
   use "mbbill/undotree"
   use "tpope/vim-fugitive"
 
   use "ray-x/lsp_signature.nvim"
-
 
   use {
     "VonHeikemen/lsp-zero.nvim",
@@ -56,6 +56,8 @@ return require("packer").startup(function(use)
       { "rafamadriz/friendly-snippets" },
     },
   }
+
+  use "github/copilot.vim"
 
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
