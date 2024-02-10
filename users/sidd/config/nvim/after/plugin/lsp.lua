@@ -96,6 +96,14 @@ require'lspconfig'.lua_ls.setup {
   },
 }
 
+require'lspconfig'.rust_analyzer.setup { 
+    settings = {
+        ["rust-analyzer"] = {
+            cargo = { allFeatures = true, },
+        },
+    },
+}
+
 lsp.setup()
 
 vim.diagnostic.config {
