@@ -28,13 +28,16 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "codes"; # Define your hostname.
   networking.networkmanager.enable = true;
   networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
+
+  # networking.extraHosts = ''
+  # 185.199.108.133 raw.githubusercontent.com
+  # '';
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -132,6 +135,8 @@ in
     shell = pkgs.fish;
   };
 
+  programs.fish.enable = true;
+
   # Enable flakes
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
@@ -224,6 +229,9 @@ in
       };
     };
   };
+
+  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver.daemon.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
