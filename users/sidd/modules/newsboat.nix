@@ -12,5 +12,7 @@
     https://blog.ncase.me/rss/
     https://www.scattered-thoughts.net/atom.xml
     https://buttondown.email/pdubroy/rss
+    https://matklad.github.io/feed.xml
+    https://raphlinus.github.io/feed.xml
   '';
 }
