@@ -58,6 +58,10 @@ lsp.on_attach(function(client, bufnr)
     return
   end
 
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint.enable(bufnr, true)
+  end
+
   vim.keymap.set("n", "g0", vim.lsp.buf.document_symbol, opts)
   vim.keymap.set("n", "gD", vim.lsp.buf.implementation, opts)
   vim.keymap.set("n", "gW", vim.lsp.buf.workspace_symbol, opts)

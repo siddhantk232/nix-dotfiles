@@ -2,10 +2,18 @@
 {
   home.packages = with pkgs; [
     go
+
     nodejs
+
     haskellPackages.ghc
+    cabal-install
+
     gcc
     python311
-    cabal-install
+
+    rustc
+    cargo
+    rust-analyzer
+    rustfmt
   ];
 }
