@@ -6,10 +6,6 @@
 
 (package-initialize)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 (setq user-full-name "Siddhant Kumar"
      user-mail-address "siddhantk232@gmail.com")
 
@@ -44,6 +40,7 @@
 (setq ring-bell-function 'ignore)
 (setq make-backup-files nil
     auto-save-default nil)
+
 ;; yes or y | no or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -235,19 +232,6 @@
 
 (global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)
 (global-set-key (kbd "C-x b") 'ibuffer)
-
-(use-package company
-  :ensure t
-  :init (company-mode)
-  :bind (:map company-active-map
-         ("<tab>" . company-complete-selection))
-  :custom
-  (company-minimum-prefix-length 1)
-  (company-idle-delay 0.0))
-
-(use-package company-box
-  :ensure t
-  :hook (company-mode . company-box-mode))
 
 (use-package treemacs
   :ensure t
