@@ -11,6 +11,8 @@
     lldb
 
     tree-sitter # not required by nvim
+
+    lua-language-server
   ];
 
   xdg.configFile."nvim".source = ../config/nvim;
