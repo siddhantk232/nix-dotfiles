@@ -3,11 +3,13 @@
   home.packages = with pkgs; [
     brave
     google-chrome
+
     bat
     zathura
     fzf
     jq
     htop
+    btop # better htop
     tree
     feh
     rclone
@@ -15,16 +17,17 @@
     tldr
     awscli2
     arandr
+    cloc
 
     texlive.combined.scheme-small
 
-    cloc
-
-    vscode
-    (pkgs.callPackage ../packages/cisco.nix { })
+    vscode # society forces me to use it sometimes :(
+    # (pkgs.callPackage ../packages/cisco.nix { })
     jetbrains.clion
 
     zoom-us
+    spotify
   ];
+
   xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;
 }

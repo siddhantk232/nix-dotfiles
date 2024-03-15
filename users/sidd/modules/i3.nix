@@ -2,6 +2,7 @@
 {
   xdg.configFile."i3/config".text = builtins.readFile ../config/i3/config;
   xdg.configFile."i3/i3status-rs.toml".text = builtins.readFile ../config/i3/i3status-rs.toml;
+
   home.packages = with pkgs; [
     (st.overrideAttrs (oldAttrs: rec {
       src = fetchFromGitHub {
@@ -14,7 +15,9 @@
       postPatch = "${oldAttrs.postPatch}\n cp ${configFile} config.h";
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
     }))
+
     (pkgs.rofi.override { plugins = [ pkgs.rofi-emoji ]; })
+
     pkgs.betterlockscreen
   ];
 }
