@@ -9,7 +9,7 @@
     https://fasterthanli.me/index.xml
     http://jackkelly.name/blog/rss.xml
     https://lexi-lambda.github.io/feeds/all.rss.xml
-    https://blog.ncase.me/rss/
+    https://blog.ncase.me/feed.xml
     https://www.scattered-thoughts.net/atom.xml
     https://buttondown.email/pdubroy/rss
     https://matklad.github.io/feed.xml
