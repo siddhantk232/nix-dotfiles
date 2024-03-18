@@ -243,3 +243,7 @@
 (use-package magit
   :ensure t)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; https://nixos.wiki/wiki/TexLive
+(setq org-latex-compiler "lualatex")
+(setq org-preview-latex-default-process 'dvisvgm)
