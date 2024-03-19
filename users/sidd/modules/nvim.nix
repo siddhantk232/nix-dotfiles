@@ -17,6 +17,10 @@
     nodePackages.bash-language-server
     nodePackages.pyright
     rust-analyzer
+
+    nodePackages.typescript # required by tsserver
+    nodePackages.typescript-language-server
+    nodePackages.prettier
   ];
 
   xdg.configFile."nvim".source = ../config/nvim;
