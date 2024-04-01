@@ -14,5 +14,6 @@
     https://buttondown.email/pdubroy/rss
     https://matklad.github.io/feed.xml
     https://raphlinus.github.io/feed.xml
+    https://without.boats/index.xml
   '';
 }
