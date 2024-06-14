@@ -18,6 +18,8 @@
     nodePackages.pyright
     rust-analyzer
 
+    gopls
+
     nodePackages.typescript # required by tsserver
     nodePackages.typescript-language-server
     nodePackages.prettier

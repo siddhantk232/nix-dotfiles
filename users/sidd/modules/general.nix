@@ -32,7 +32,7 @@ in
 
     vscode # society forces me to use it sometimes :(
     # (pkgs.callPackage ../packages/cisco.nix { })
-    jetbrains.clion
+    # jetbrains.clion
 
     zoom-us
     spotify
