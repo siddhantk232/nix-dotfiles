@@ -19,7 +19,7 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let
       overlays = [
-        self.inputs.neovim-nightly-overlay.overlay
+        self.inputs.neovim-nightly-overlay.overlays.default
         self.inputs.emacs-overlay.overlay
       ];
       system = "x86_64-linux";

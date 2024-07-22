@@ -18,7 +18,7 @@ in
     fzf
     jq
     htop
-    btop # better htop
+    btop # better htop (so much better)
     tree
     feh
     rclone
@@ -32,10 +32,10 @@ in
 
     vscode # society forces me to use it sometimes :(
     # (pkgs.callPackage ../packages/cisco.nix { })
-    # jetbrains.clion
+    jetbrains.clion
 
     zoom-us
-    spotify
+    # spotify
   ];
 
   xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;

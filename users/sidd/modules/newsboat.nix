@@ -5,6 +5,7 @@
   ];
 
   home.file.".newsboat/urls".text = ''
+    https://jaredforsyth.com/posts/rss.xml
     https://blogs.nasa.gov/webb/feed/
     https://fasterthanli.me/index.xml
     http://jackkelly.name/blog/rss.xml

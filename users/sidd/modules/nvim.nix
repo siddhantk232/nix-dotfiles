@@ -2,7 +2,7 @@
 {
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
+    package = pkgs.neovim;
     vimdiffAlias = true;
   };
 
@@ -15,7 +15,7 @@
     # lsp servers
     lua-language-server
     nodePackages.bash-language-server
-    nodePackages.pyright
+    pyright
     rust-analyzer
 
     gopls

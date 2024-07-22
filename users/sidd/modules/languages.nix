@@ -9,6 +9,8 @@
     cabal-install
 
     gcc
+    gdb
+    gf # gdb-frontend
     python311
 
     rustc
