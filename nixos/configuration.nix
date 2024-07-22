@@ -35,6 +35,8 @@ in
   networking.networkmanager.enable = true;
   networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
 
+  # able to write /etc/hosts as sudo
+  environment.etc.hosts.mode = "0644";
   # networking.extraHosts = ''
   # 185.199.108.133 raw.githubusercontent.com
   # '';
@@ -181,12 +183,12 @@ in
   # shared partition setup
   boot.supportedFilesystems = [ "ntfs" ];
 
-  fileSystems."/home/sidd/shared" = {
-    device = "/dev/nvme0n1p8";
-    fsType = "ntfs3";
-    options = [ "rw" "uid=1000" ];
-  };
-
+  # fileSystems."/home/sidd/shared" = {
+  #   device = "/dev/nvme0n1p8";
+  #   fsType = "ntfs3";
+  #   options = [ "rw" "uid=1000" ];
+  # };
+  #
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
