@@ -68,10 +68,6 @@ in
 
     videoDrivers = [ "nvidia" ];
 
-    displayManager = {
-      defaultSession = "none+i3";
-    };
-
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
@@ -81,13 +77,18 @@ in
       ];
     };
 
-    # Enable touchpad support (enabled default in most desktopManager).
-    libinput = {
-      enable = true;
-      touchpad = {
-        tapping = true;
-        naturalScrolling = true;
-      };
+  };
+
+  services.displayManager = {
+    defaultSession = "none+i3";
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      tapping = true;
+      naturalScrolling = true;
     };
   };
 
@@ -140,7 +141,7 @@ in
   programs.fish.enable = true;
 
   # Enable flakes
-  nix.package = pkgs.nixUnstable;
+  nix.package = pkgs.nixVersions.latest;
   nix.extraOptions = ''
     keep-outputs = true
     keep-derivations = true
