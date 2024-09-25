@@ -53,6 +53,7 @@
                 ./modules/direnv.nix
                 ./modules/fonts.nix
                 ./modules/general.nix
+                ./modules/tex.nix
                 ./modules/git.nix
                 ./modules/i3.nix
                 ./modules/languages.nix
