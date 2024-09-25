@@ -12,3 +12,6 @@ update_hm:
 
 update_os:
 	sudo nixos-rebuild switch --flake . --recreate-lock-file
+
+make_ft:
+	nix run nix-darwin -- switch --flake .
