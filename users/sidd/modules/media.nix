@@ -1,15 +1,11 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    blender
-    vlc
-    gimp
-    cmus
+    # vlc
 
     yt-dlp
     aria # downloader
 
-    obs-studio
-    simplescreenrecorder
+    # obs-studio
   ];
 }

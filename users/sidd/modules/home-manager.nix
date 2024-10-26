@@ -11,14 +11,17 @@
     pulseaudio
     playerctl
     brightnessctl
-    lsd
     bc
-    ripgrep
-    nitrogen
+    nitrogen # wallpaper on linux
     (pass.withExtensions (exts: [ exts.pass-otp ]))
+    zathura
+    feh
+    arandr
   ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  xdg.configFile."zathura/zathurarc".text = builtins.readFile ../config/zathurarc;
 }

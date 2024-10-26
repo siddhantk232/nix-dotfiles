@@ -53,11 +53,13 @@
                 ./modules/direnv.nix
                 ./modules/fonts.nix
                 ./modules/general.nix
+                ./modules/browsers.nix
                 ./modules/tex.nix
                 ./modules/git.nix
                 ./modules/i3.nix
                 ./modules/languages.nix
                 ./modules/media.nix
+                ./modules/video_tools.nix
                 ./modules/newsboat.nix
               ];
             }

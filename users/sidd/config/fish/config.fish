@@ -14,6 +14,9 @@ set -x PATH $PATH ~/flutter/bin
 # custom scripts
 set -x PATH $PATH ~/nix-dotfiles/users/sidd/config/scripts
 
+# for wezterm cli mainly
+set -x PATH $PATH /Applications/WezTerm.app/Contents/MacOS
+
 # config aliases (all lowercase and starts with c)
 alias config "nvim ~/projects/.dotfiles"
 # Shortcut to setup a nix-shell with fish. This lets you do something like

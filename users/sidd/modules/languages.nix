@@ -5,12 +5,12 @@
 
     nodejs
 
-    haskellPackages.ghc
-    cabal-install
+    # haskellPackages.ghc
+    # cabal-install
 
     gcc
-    gdb
-    gf # gdb-frontend
+    # gdb
+    # gf # gdb-frontend
     python311
 
     rustc

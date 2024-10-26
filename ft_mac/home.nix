@@ -45,6 +45,11 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".zshrc".text = ''
+      PATH="$PATH:/Applications/WezTerm.app/Contents/MacOS"
+      export PATH
+    '';
   };
 
   # You can also manage environment variables but you will have to manually
