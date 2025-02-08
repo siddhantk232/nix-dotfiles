@@ -2,7 +2,7 @@
 set $mod Mod4
 set $inner_gaps 5
 set $outer_gaps 0
-set $term st
+set $term ghostty
 set $BROWSER brave
 
 font pango: Fira Code 10
@@ -222,3 +222,7 @@ exec --no-startup-id goldendict
 exec --no-startup-id blueman-applet
 
 exec --no-startup-id setxkbmap -option compose:ralt
+
+output HDMI-A-1 scale 2
+output HDMI-A-1 bg ~/Pictures/wallpapers/wallhaven-1p6971_3840x2160.png fit
+output eDP-1 bg ~/Pictures/wallpapers/wallhaven-d6y12l_1920x1080.png fit

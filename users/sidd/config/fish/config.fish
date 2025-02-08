@@ -4,7 +4,7 @@ set fish_greeting
 # environment variables 
 set -x EDITOR nvim
 set -x BROWSER brave
-set -x TERM st
+set -x TERM ghostty
 set -x LC_ALL en_US.UTF-8
 set -x BAT_THEME gruvbox-dark
 set -x PATH $PATH ~/bin

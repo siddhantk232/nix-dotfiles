@@ -2,6 +2,7 @@
 {
   fonts.fontconfig.enable = true;
   home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "UbuntuMono" "FiraCode" ]; })
+    pkgs.nerd-fonts.ubuntu-mono
+    pkgs.nerd-fonts.fira-code
   ];
 }

@@ -61,26 +61,42 @@ in
 
   # Enable the X11 windowing system.
   # Enable the GNOME Desktop Environment.
-  services.xserver = {
+  # services.xserver = {
+  #   enable = true;
+  #   desktopManager.xterm.enable = false;
+  #   exportConfiguration = true;
+  #
+  #   videoDrivers = [ "nvidia" ];
+  #
+  #   windowManager.i3 = {
+  #     enable = true;
+  #     package = pkgs.i3-gaps;
+  #     extraPackages = with pkgs; [
+  #       dmenu
+  #       i3status-rust
+  #     ];
+  #   };
+  #
+  # };
+
+  # services.displayManager = {
+  #   defaultSession = "none+i3";
+  # };
+
+
+  programs.sway = {
     enable = true;
-    desktopManager.xterm.enable = false;
-    exportConfiguration = true;
-
-    videoDrivers = [ "nvidia" ];
-
-    windowManager.i3 = {
-      enable = true;
-      package = pkgs.i3-gaps;
-      extraPackages = with pkgs; [
-        dmenu
-        i3status-rust
-      ];
-    };
-
+    wrapperFeatures.gtk = true;
   };
 
-  services.displayManager = {
-    defaultSession = "none+i3";
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";
+      };
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -151,6 +167,11 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    grim # screenshot for sway
+    slurp # screenshot?
+    wl-clipboard
+    mako # notification system on sway
+
     bind
     binutils
     coreutils
@@ -170,6 +191,8 @@ in
     man-pages
     libnotify
 
+    i3status-rust
+
     xfce.thunar
     # Optionals
     xfce.xfconf # Needed to save the preferences
@@ -180,6 +203,8 @@ in
 
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
+
+  services.gnome.gnome-keyring.enable = true;
 
   # shared partition setup
   boot.supportedFilesystems = [ "ntfs" ];
