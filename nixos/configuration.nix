@@ -59,56 +59,39 @@ in
     keyMap = "us";
   };
 
-  # Enable the X11 windowing system.
-  # Enable the GNOME Desktop Environment.
-  # services.xserver = {
-  #   enable = true;
-  #   desktopManager.xterm.enable = false;
-  #   exportConfiguration = true;
-  #
-  #   videoDrivers = [ "nvidia" ];
-  #
-  #   windowManager.i3 = {
-  #     enable = true;
-  #     package = pkgs.i3-gaps;
-  #     extraPackages = with pkgs; [
-  #       dmenu
-  #       i3status-rust
-  #     ];
-  #   };
-  #
-  # };
+  programs.hyprland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  # services.displayManager = {
-  #   defaultSession = "none+i3";
-  # };
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia = {
+    # Modesetting is required.
+    modesetting.enable = true;
 
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    # Enable this if you have graphical corruption issues or application crashes after waking
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
+    # of just the bare essentials.
+    powerManagement.enable = false;
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = false;
+
+    # Use the NVidia open source kernel module (not to be confused with the
+    # independent third-party "nouveau" open source driver).
+    # Support is limited to the Turing and later architectures. Full list of 
+    # supported GPUs is at: 
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Only available from driver 515.43.04+
+    open = false;
+
+    # Enable the Nvidia settings menu,
+    # accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+
+    # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";
-      };
-    };
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = true;
-      naturalScrolling = true;
-    };
-  };
-
-  services.picom = import ./config/picom.nix { inherit pkgs; };
 
   hardware.nvidia.prime = {
     offload.enable = true;
@@ -167,11 +150,15 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    grim # screenshot for sway
-    slurp # screenshot?
+    kitty # required by hyprland
+    wofi # rofi but wayland
+    grim # scrots
+    slurp # scrots
+    hyprpaper # wallpaper
+    waybar # statusbar
+    hyprpicker
     wl-clipboard
-    mako # notification system on sway
-
+    xdg-utils
     bind
     binutils
     coreutils
@@ -190,8 +177,6 @@ in
     gnumake
     man-pages
     libnotify
-
-    i3status-rust
 
     xfce.thunar
     # Optionals
@@ -239,25 +224,6 @@ in
   # services.openssh.enable = true;
 
   hardware.bluetooth.enable = true;
-  systemd.user.services."dunst" = {
-    enable = true;
-    description = "";
-    wantedBy = [ "default.target" ];
-    serviceConfig.Restart = "always";
-    serviceConfig.RestartSec = 2;
-    serviceConfig.ExecStart = "${pkgs.dunst}/bin/dunst";
-  };
-
-  specialisation = {
-    external-display.configuration = {
-      system.nixos.tags = [ "external-display" ];
-      hardware.nvidia = {
-        prime.offload.enable = lib.mkForce false;
-        powerManagement.enable = lib.mkForce false;
-      };
-    };
-  };
-
   hardware.opentabletdriver.enable = true;
   hardware.opentabletdriver.daemon.enable = true;
 
