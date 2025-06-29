@@ -1,2 +1,2 @@
-window-decoration = false
 theme = GruvboxDark
+window-decoration = auto
