@@ -185,18 +185,18 @@ bindsym Control+Shift+e exec rofi -show emoji -modi emoji
 bindsym Control+Shift+l exec betterlockscreen -l
 
 # scratchpad
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="math"]     move scratchpad
+for_window [app_id="com.mitchellh.ghostty" title="dropdown"] move scratchpad
+for_window [app_id="com.mitchellh.ghostty" title="math"]     move scratchpad
 
-for_window [instance="dropdown"] resize set 1280 720
+for_window [app_id="com.mitchellh.ghostty" title="dropdown"] resize set 1280 720
 
 # create a tmux session with a window for browsing my vimwiki
-exec --no-startup-id $term -n dropdown -e tmux new -s scratch -n DIARY "cd ~/vimwiki && nvim todo.md"
+exec --no-startup-id $term --title="dropdown" -e "tmux new -s scratch -n DIARY 'cd ~/vimwiki && nvim todo.md'"
 # simple calculator like operations
-exec --no-startup-id $term -n math -e bc
+exec --no-startup-id $term --title="math" -e bc
 
-bindsym $mod+n [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
-bindsym $mod+a [instance="math"]     scratchpad show; [instance="math"]     move position center
+bindsym $mod+n [app_id="com.mitchellh.ghostty" title="dropdown"] scratchpad show; [app_id="com.mitchellh.ghostty" title="dropdown"] move position center
+bindsym $mod+a [app_id="com.mitchellh.ghostty" title="math"]     scratchpad show; [app_id="com.mitchellh.ghostty" title="math"]     move position center
 
 bar {
     font pango: Fira Code 10
