@@ -21,7 +21,7 @@
     gopls
 
     nodePackages.typescript # required by tsserver
-    nodePackages.typescript-language-server
+    # nodePackages.typescript-language-server
     nodePackages.prettier
   ];
 

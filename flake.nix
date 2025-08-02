@@ -55,7 +55,7 @@
                 ./users/sidd/modules/media.nix
                 ./users/sidd/modules/newsboat.nix
                 ./users/sidd/modules/nvim.nix
-                ./users/sidd/modules/emacs
+                # ./users/sidd/modules/emacs
                 ./users/sidd/modules/tmux.nix
               ];
             };
