@@ -2,6 +2,7 @@
   modulesPath,
   lib,
   pkgs,
+  config,
   ...
 } @ args:
 {
@@ -18,6 +19,15 @@
     efiInstallAsRemovable = true;
   };
   services.openssh.enable = true;
+
+  sops = {
+    defaultSopsFile = ./secrets/cloudflare.yaml;
+    age.keyFile = "/var/lib/sops-nix/key.txt";
+    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    age.generateKey = true;
+
+    secrets.cloudflare_api_token = {};
+  };
 
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
@@ -46,6 +56,39 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPPhp/5p6vOj9vSuFTCEPRdcSESCGosAlJcZb8UKi2/g siddhant@fifthtrys-MacBook-Pro.local"
     ];
   };
+
+  services.tailscale.enable = true;
+  services.actual.enable = true;
+
+  sops.templates.cloudflare-env = {
+    content = ''
+      CLOUDFLARE_API_TOKEN=${config.sops.placeholder.cloudflare_api_token}
+    '';
+  };
+
+  services.caddy = {
+    enable = true;
+
+    package = pkgs.caddy.withPlugins {
+      plugins = [ "github.com/caddy-dns/cloudflare@v0.2.4" ];
+      hash = "sha256-8HpPZ/VoiV/k0ZYcnXHmkwuEYKNpURKTN19aYZRLPoM=";
+    };
+
+
+    configFile = pkgs.writeText "Caddyfile" ''
+      {
+        acme_dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+      }
+
+      actual.siddhant.xyz {
+        reverse_proxy localhost:3000
+      }
+    '';
+  };
+
+  systemd.services.caddy.serviceConfig.EnvironmentFile = [
+    config.sops.templates.cloudflare-env.path
+  ];
 
   system.stateVersion = "25.11";
 }

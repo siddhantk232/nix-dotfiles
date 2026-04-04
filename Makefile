@@ -15,3 +15,6 @@ update_os:
 
 make_ft:
 	nix run nix-darwin -- switch --flake .
+
+deploy-oci:
+	nix run github:serokell/deploy-rs -- --skip-checks  --remote-build  .#oracle-cloud

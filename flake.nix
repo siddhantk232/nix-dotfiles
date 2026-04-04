@@ -27,9 +27,12 @@
       url = "github:serokell/deploy-rs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, nixpkgs-unstable, home-manager, disko, deploy-rs, ... }:
+  outputs = { self, nixpkgs, nix-darwin, nixpkgs-unstable, home-manager, disko, deploy-rs, sops-nix, ... }:
     let
       overlays = [
         self.inputs.neovim-nightly-overlay.overlays.default
@@ -81,13 +84,15 @@
         modules = [
           disko.nixosModules.disko
           ./oci/configuration.nix
+          sops-nix.nixosModules.sops
         ];
       };
 
       deploy.nodes.oracle-cloud = {
-        hostname = "68.233.119.236";
+        hostname = "oci-nixos";
         profiles.system = {
             user = "root";
+            sshUser = "root";
             path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.oci-aarch64;
         };
       };
