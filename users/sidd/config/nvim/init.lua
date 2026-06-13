@@ -154,9 +154,8 @@ vim.pack.add({
   "https://github.com/tpope/vim-fugitive",
   "https://github.com/godlygeek/tabular",
   "https://github.com/mhinz/vim-startify",
-  "https://github.com/mattn/emmet-vim",
+  -- "https://github.com/mattn/emmet-vim",
   "https://github.com/kyazdani42/nvim-tree.lua",
-
 
   -- Telescope
   "https://github.com/nvim-lua/plenary.nvim",
