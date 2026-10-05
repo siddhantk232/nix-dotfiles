@@ -46,7 +46,7 @@
         modules = [ ./nixos/configuration.nix ];
       };
 
-      darwinConfigurations."fifthtrys-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./ft_mac/configuration.nix

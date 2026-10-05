@@ -4,7 +4,7 @@
     # vlc
 
     yt-dlp
-    aria # downloader
+    aria2 # downloader
 
     # obs-studio
   ];

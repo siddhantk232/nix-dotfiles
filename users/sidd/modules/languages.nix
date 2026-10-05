@@ -8,13 +8,14 @@
     # haskellPackages.ghc
     # cabal-install
 
-    gcc
+    stdenv.cc
     # gdb
     # gf # gdb-frontend
     python311
 
     rustc
     cargo
+    cargo-watch
     rustfmt
     clippy
   ];

@@ -195,7 +195,7 @@
   systemd.timers."instahyre" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
-      OnCalendar = "*-*-* 09:00:00";
+      OnCalendar = "*-*-* 03:30:00";
       Persistent = true;
       AccuracySec = "1min";
     };
@@ -203,10 +203,13 @@
 
   systemd.services."instahyre" = {
     # this file only contains a string that has the curl command to hit my instahyre. it's .gitignore(d)
-    script = config.sops.secrets."instahyre/curl".path;
+    path = [ pkgs.curl ];
+    script = ''
+        ${pkgs.bash}/bin/bash ${config.sops.secrets."instahyre/curl".path}
+    '';
     serviceConfig = {
       Type = "oneshot";
-      User = "sidd";
+      User = "root";
     };
   };
 

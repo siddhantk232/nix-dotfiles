@@ -14,16 +14,16 @@
 
     # lsp servers
     lua-language-server
-    nodePackages.bash-language-server
+    bash-language-server
     pyright
     rust-analyzer
 
     gopls
 
-    nodePackages.typescript # required by tsserver
+    typescript # required by tsserver
     # nodePackages.typescript-language-server
-    nodePackages.prettier
+    prettier
   ];
 
-  xdg.configFile."nvim".source = ../config/nvim;
+  xdg.configFile."nvim/init.lua".source = ../config/nvim/init.lua;
 }
